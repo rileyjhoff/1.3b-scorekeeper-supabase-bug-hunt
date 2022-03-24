@@ -82,7 +82,8 @@ function displayCurrentGameEl() {
 }
 
 
-function displayAllGames() {
+async function displayAllGames() {
+    const pastGames = await getGames();
     for (let game of pastGames) {
         const gameEl = renderGame(game);
 
