@@ -7,14 +7,15 @@ import {
 import { displayGame } from '../render-utils.js';
 
 const currentGameEl = document.getElementById('current-game-container');
+const pastGamesEl = document.getElementById('past-games-container');
 const logoutButton = document.getElementById('logout');
 
 const nameForm = document.getElementById('name-form');
-const teamOneAddButton = document.getElementById('teamoneadd-button');
+const teamOneAddButton = document.getElementById('team-one-add-button');
 const teamTwoAddButton = document.getElementById('team-two-add-button');
 const teamOneSubtractButton = document.getElementById('team-one-subtract-button');
 const teamTwoSubtractButton = document.getElementById('team-two-subtract-button');
-const finishGameButton = document.getElementById('finishgamebutton');
+const finishGameButton = document.getElementById('finish-game-button');
 const teamOneLabel = document.getElementById('team-one-name');
 const teamTwoLabel = document.getElementById('team-two-name');
 
