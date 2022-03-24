@@ -4,7 +4,7 @@ import {
     getGames,
     createGame,
 } from '../fetch-utils.js';
-import { displayGame } from '../render-utils.js';
+import { renderGame } from '../render-utils.js';
 
 const currentGameEl = document.getElementById('current-game-container');
 const pastGamesEl = document.getElementById('past-games-container');
@@ -30,15 +30,15 @@ let currentGame = {
     score2: 0,
 };
 
-nameForm.addEventListener = ('submit', (e) => {
-    e.preventDefault();
+nameForm.addEventListener('submit', (event) => {
+    event.preventDefault();
     const formData = new FormData(nameForm);
 
     const name1 = formData.get('team-one');
     const name2 = formData.get('team-two');
 
-    currentGame.name1 = name1;
-    currentGame.name2 = name2;
+    teamOneLabel.textContent = name1;
+    teamTwoLabel.textContent = name2;
     
     nameForm.reset();
     displayCurrentGameEl();
@@ -74,7 +74,7 @@ function displayCurrentGameEl() {
     teamOneLabel.textContent = currentGame.name1;
     teamTwoLabel.textContent = currentGame.name2;
 
-    const gameEl = displayGame(currentGame);
+    const gameEl = renderGame(currentGame);
     
     gameEl.classList.add('current');
 
@@ -84,7 +84,7 @@ function displayCurrentGameEl() {
 
 function displayAllGames() {
     for (let game of pastGames) {
-        const gameEl = displayGame(game);
+        const gameEl = renderGame(game);
 
         gameEl.classList.add('past');
         
