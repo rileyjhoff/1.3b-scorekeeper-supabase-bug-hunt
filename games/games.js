@@ -30,10 +30,11 @@ let currentGame = {
 };
 
 nameForm.addEventListener = ('submit', (e) => {
+    e.preventDefault();
     const formData = new FormData(nameForm);
-  
-    const name1 = formData.get('team-1');
-    const name2 = formData.get('team-2');
+
+    const name1 = formData.get('team-one');
+    const name2 = formData.get('team-two');
 
     currentGame.name1 = name1;
     currentGame.name2 = name2;
